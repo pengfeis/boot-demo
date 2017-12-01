@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.pengfes.spr.mapper")
+@MapperScan("com.pengfeis.spr.mapper")
 public class BootDemoApplication {
 
 	public static void main(String[] args) {
