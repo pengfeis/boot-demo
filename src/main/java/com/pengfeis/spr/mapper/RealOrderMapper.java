@@ -13,5 +13,5 @@ public interface RealOrderMapper {
     List<RealOrder> getAllRealOrders();
 
     @InsertProvider(type = RealOrderSqlProvider.class, method = "insertRealOrderStmt")
-    List<RealOrder> insertRealOrder(RealOrder realOrder);
+    Integer insertRealOrder(RealOrder realOrder);
 }

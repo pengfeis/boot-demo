@@ -7,11 +7,9 @@ import com.pengfeis.spr.mapper.RealOrderMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,6 +25,8 @@ public class DemoController {
     @Autowired
     private StringRedisTemplate template;
 
+    private ObjectMapper om = new ObjectMapper();
+
     @ResponseBody
     @RequestMapping("/hello")
     public String greeting(String name) {
@@ -37,11 +37,23 @@ public class DemoController {
     @RequestMapping("/peek")
     public String peekDb(Long id) {
         try {
-            ObjectMapper om = new ObjectMapper();
             List<RealOrder> result = realOrderMapper.getAllRealOrders();
             return om.writeValueAsString(result);
         } catch (JsonProcessingException e) {
             return "Error!";
+        }
+    }
+
+    @RequestMapping("/save")
+    public String saveOrder(@RequestBody RealOrder realOrder) {
+        try {
+            realOrder.setCreateDate(new Date());
+            realOrder.setUpdateDate(new Date());
+            Integer saved = realOrderMapper.insertRealOrder(realOrder);
+            System.out.println(saved);
+            return om.writeValueAsString(realOrder);
+        } catch (JsonProcessingException e) {
+            return "Error" + e.getMessage();
         }
     }
 
