@@ -1,0 +1,13 @@
+# start port
+server:
+  port: 8888
+
+
+spring:
+  application:
+    name: spring-cloud-producer
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka.didispace.com/eureka/

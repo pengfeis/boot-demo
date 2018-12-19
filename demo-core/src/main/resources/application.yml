@@ -1,0 +1,4 @@
+spring:
+  port: 8887
+  profiles:
+    active: dev
