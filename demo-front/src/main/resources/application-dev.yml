@@ -2,12 +2,12 @@
 server:
   port: 8888
 
-
 spring:
   application:
     name: spring-cloud-producer
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://eureka.didispace.com/eureka/
+

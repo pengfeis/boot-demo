@@ -25,6 +25,60 @@
     </properties>
 
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.SR2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.18</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss -->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>3.6.0</version>
+            </dependency>
+
+                <dependency>
+                    <groupId>com.google.zxing</groupId>
+                    <artifactId>core</artifactId>
+                    <version>3.3.0</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.google.zxing</groupId>
+                    <artifactId>javase</artifactId>
+                    <version>3.3.0</version>
+                </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.9</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.qiniu/qiniu-java-sdk -->
+            <dependency>
+                <groupId>com.qiniu</groupId>
+                <artifactId>qiniu-java-sdk</artifactId>
+                <version>7.2.25</version>
+            </dependency>
+
+
+
+        </dependencies>
+    </dependencyManagement>
+
+
     <modules>
         <module>demo-core</module>
         <module>demo-front</module>

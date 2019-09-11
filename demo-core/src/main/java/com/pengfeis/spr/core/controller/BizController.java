@@ -13,8 +13,8 @@ public class BizController {
     @Resource
     GreetingClient greetingClient;
 
-    @RequestMapping("/hello/{name}")
-    public String index(@PathVariable("name") String name) {
-        return greetingClient.say(name);
+    @RequestMapping("/hello/{name}/{mobile}/{idNum}")
+    public String index(@PathVariable("name") String name, @PathVariable("mobile") String mobile, @PathVariable("idNum") String idNum) {
+        return greetingClient.say(name, mobile, idNum);
     }
 }
