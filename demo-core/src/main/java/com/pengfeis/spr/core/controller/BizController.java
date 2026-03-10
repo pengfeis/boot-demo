@@ -15,6 +15,10 @@ public class BizController {
 
     @RequestMapping("/hello/{name}/{mobile}/{idNum}")
     public String index(@PathVariable("name") String name, @PathVariable("mobile") String mobile, @PathVariable("idNum") String idNum) {
+        this.to_char();
         return greetingClient.say(name, mobile, idNum);
+    }
+    private String to_char() {
+        return "killall";
     }
 }
